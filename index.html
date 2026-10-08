@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f5f5">
+  <title>HanaSteel | Process Costing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .operator-picker{position:relative;display:flex;align-items:center;gap:8px;min-width:145px;height:38px;padding:0 4px;border:0;background:transparent}
+    .operator-avatar{display:grid;place-items:center;flex:none;width:31px;height:31px;border-radius:50%;background:#e4ede8;color:#34574a;font-size:10px;font-weight:700}
+    .operator-copy{display:flex;min-width:0;flex-direction:column;justify-content:center;gap:2px}
+    .operator-copy strong{overflow:hidden;color:#334340;font-size:10px;font-weight:600;text-overflow:ellipsis;white-space:nowrap}
+    .operator-copy small{color:#84918e;font-size:9px;white-space:nowrap}
+    #operator-filter{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;opacity:0;cursor:pointer}
+    @media(max-width:680px){.operator-picker{min-width:112px;max-width:138px;gap:6px}.operator-avatar{width:27px;height:27px}.operator-copy strong{max-width:88px}}
+    .brand{margin-bottom:20px}
+    .hero-context{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+    .hero-context .eyebrow{margin:0}
+    .hero-copy .hero-period{margin:0;color:#d3e1d7;font-size:9px;white-space:nowrap}
+    .hero-copy h2{max-width:500px;margin:0 0 6px;font-size:20px;line-height:1.25}
+    .hero-copy .hero-flow{max-width:500px;margin:0;color:#b8ccc4;font-size:10px;line-height:1.5}
+    @media(max-width:680px){.brand{margin-bottom:20px}.hero-context{gap:7px}.hero-context .eyebrow{font-size:8px}.hero-copy .hero-period{font-size:8px}.hero-copy h2{max-width:280px;font-size:16px}.hero-copy .hero-flow{max-width:250px;font-size:9px}}
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="HanaSteel dashboard">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>PT HanaSteel</strong><small>Production Costing</small></span>
+      </a>
+      <nav id="navigation" aria-label="Navigasi utama"></nav>
+      <div class="sidebar-bottom app-identity">
+        <strong>PT HanaSteel</strong>
+        <span>Production Costing System</span>
+        <small>© 2026</small>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="mobile-menu" aria-label="Buka navigasi">☰</button>
+        <div class="breadcrumb"><span>HanaSteel</span><span class="crumb-divider">/</span><strong id="current-section">Dashboard</strong></div>
+        <div class="topbar-right"><div class="period-picker"><span class="period-dot"></span><select id="period-filter" aria-label="Periode akuntansi"><option value="">Semua periode</option></select></div><div class="operator-picker"><span class="operator-avatar" id="operator-avatar" aria-hidden="true">—</span><span class="operator-copy"><strong id="operator-name">Pilih operator</strong><small id="operator-role">Operator aktif</small></span><select id="operator-filter" aria-label="Operator aktif"><option value="">Pilih operator aktif</option></select></div></div>
+      </header>
+      <section class="page-content" id="page-content" aria-live="polite"></section>
+    </main>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+  <dialog class="modal" id="record-modal"><form id="record-form" method="dialog"><div class="modal-heading"><div><span class="eyebrow" id="modal-eyebrow">DATA MASTER</span><h2 id="modal-title">Tambah data</h2></div><button type="button" class="icon-button" id="close-modal" aria-label="Tutup">×</button></div><div class="form-grid" id="form-fields"></div><div class="form-error" id="form-error"></div><div class="modal-actions"><button type="button" class="button button-quiet" id="cancel-modal">Batal</button><button type="submit" class="button button-primary"><span>Simpan data</span><span aria-hidden="true">→</span></button></div></form></dialog>
+  <script src="../backend/app.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
