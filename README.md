@@ -372,7 +372,3 @@ Gunakan tautan [demo GitHub Pages](https://yohanaharianjaaa.github.io/Process-Co
 7. Tinjau pasangan Debit/Kredit jurnal serta status balance. Pada periode OPEN, pemuatan aplikasi dapat menyinkronkan jurnal ke database.
 8. Hindari menghapus atau mengubah transaksi yang sudah direferensikan jurnal tanpa memahami relasi dan dampak alokasi.
 9. Jangan tampilkan konfigurasi Supabase atau data sensitif pada rekaman/screenshot presentasi.
-
-## Verifikasi Informasi Proyek
-
-Tautan demo, identitas tugas, dan dosen pengampu pada README ini mengikuti informasi yang diberikan untuk dokumentasi proyek. Ketersediaan demo GitHub Pages serta isi dokumen Word tambahan sebaiknya diperiksa kembali secara manual sebelum presentasi atau publikasi.
